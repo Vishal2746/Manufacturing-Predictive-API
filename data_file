@@ -1,0 +1,19 @@
+import os
+import pandas as pd
+import random
+
+# Ensure the 'data' folder exists
+os.makedirs('data', exist_ok=True)
+
+# Generate synthetic manufacturing data
+data = {
+    'Machine_ID': range(1, 101),  # Machine IDs 1 to 100
+    'Temperature': [random.randint(60, 100) for _ in range(100)],  # Random temperature
+    'Run_Time': [random.randint(100, 500) for _ in range(100)],  # Random runtime
+    'Downtime_Flag': [random.choice([0, 1]) for _ in range(100)]  # Downtime (0 = No, 1 = Yes)
+}
+
+# Save to a CSV file
+df = pd.DataFrame(data)
+df.to_csv('data/sample_data.csv', index=False)
+print("Synthetic dataset created at: data/sample_data.csv")
