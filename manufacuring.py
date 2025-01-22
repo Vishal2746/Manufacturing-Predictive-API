@@ -7,7 +7,7 @@ print(data.head())  # Display the first 5 rows of the dataset
 from sklearn.model_selection import train_test_split
 
 # Features (input variables)
-X = data[['Temperature', 'Run_Time']]  # Adjust if your dataset has different column names
+X = data[['Temperature', 'Run_Time']] 
 
 # Target (output variable)
 y = data['Downtime_Flag']
@@ -34,7 +34,6 @@ print(f"Model Accuracy: {accuracy:.2f}")
 import os
 import pickle
 
-# Ensure the 'model' directory exists
 os.makedirs('model', exist_ok=True)
 
 # Save the trained model
